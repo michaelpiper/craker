@@ -1,0 +1,14 @@
+{
+  "name": "hack",
+  "version": "0.1.1",
+  "description": "my hacktoo",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodejs genrand.js"
+  },
+  "keywords": [
+    "loveme"
+  ],
+  "author": "michaelpiper",
+  "license": "ISC"
+}
