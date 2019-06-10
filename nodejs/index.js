@@ -159,7 +159,7 @@ function forcepassword_reset(){
 }
 
 // passRandomString();
-forcepassword_reset();
+// forcepassword_reset();
 
 
 // var httpRequest=require('request');
