@@ -556,9 +556,9 @@ function get_hash($algorithm, $string) {
 // Command execution
 function execute_command($command) {
     $descriptors = array(
-        0 => array('pty', 'r'), // STDIN
-        1 => array('pty', 'w'), // STDOUT
-        2 => array('pty', 'w')  // STDERR
+        0 => array('pipe', 'r'), // STDIN
+        1 => array('pipe', 'w'), // STDOUT
+        2 => array('pipe', 'w')  // STDERR
     );
 
     $process = proc_open($command , $descriptors, $pipes);
