@@ -12,7 +12,7 @@ $NO_LOGIN = false;
 // Single-user credentials
 // Example: $USER = 'user'; $PASSWORD = 'password';
 $USER = 'root';
-$PASSWORD = md5("damola123");
+$PASSWORD = "0ba66d5c949a903b1768021e0e944fe3";
 
 // Multi-user credentials
 // Example: $ACCOUNTS = array('user1' => 'password1', 'user2' => 'password2');
