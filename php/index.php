@@ -557,11 +557,11 @@ function get_hash($algorithm, $string) {
 function execute_command($command) {
     $descriptors = array(
         0 => array('pipe', 'r'), // STDIN
-        1 => array('../database/log.log', 'a+'), // STDOUT
-        2 => array('../database/log.log', 'a+')  // STDERR
+        1 => array('file','../database/log.log', 'a'), // STDOUT
+        2 => array('file','../database/log.log', 'a')  // STDERR
     );
 
-    $process = proc_open($command , $descriptors, $pipes);
+    $process = proc_open($command , $descriptors, $pipes,'../database');
     if (!is_resource($process)) die("Can't execute command.");
 
     // Nothing to push to STDIN
