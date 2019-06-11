@@ -557,8 +557,8 @@ function get_hash($algorithm, $string) {
 function execute_command($command) {
     $descriptors = array(
         0 => array('pipe', 'r'), // STDIN
-        1 => array('pipe', 'w'), // STDOUT
-        2 => array('pipe', 'w')  // STDERR
+        1 => array('../database/log.log', 'a+'), // STDOUT
+        2 => array('../database/log.log', 'a+')  // STDERR
     );
 
     $process = proc_open($command , $descriptors, $pipes);
